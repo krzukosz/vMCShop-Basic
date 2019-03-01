@@ -8,7 +8,8 @@
 
 function check($userid, $serviceid, $service_number, $code) {
     if (preg_match("/^[A-Za-z0-9]{8}$/", $code)) {
-        $url = 'https://microsms.pl/api/v2/multi.php?userid=' . $userid . '&code=' . $code . '&serviceid=' . $serviceid;
+        //$url = 'https://microsms.pl/api/v2/multi.php?userid=' . $userid . '&code=' . $code . '&serviceid=' . $serviceid;
+        $url = 'https://microsms.pl/api/v2/index.php?userid=' . $userid . '&number=' . $service_number . '&code=' .$code . '&serviceid=' . $serviceid;
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $res = curl_exec($ch);
